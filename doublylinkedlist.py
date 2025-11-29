@@ -4,6 +4,7 @@ class Node:
         self.next = None
         self.prev = None
 
+
 class DoublyLinkedList:
 
     def __init__(self, value):
@@ -12,13 +13,11 @@ class DoublyLinkedList:
         self.tail = new_node
         self.length = 1
 
-
     def print_list(self):
         temp = self.head
         while temp: # or while temp is not None:
             print(temp.value)
             temp = temp.next
-
 
     def append(self, value):
         new_node = Node(value)
@@ -31,7 +30,6 @@ class DoublyLinkedList:
             self.tail = new_node
         self.length += 1
         return True
-    
 
     def pop(self):
         if self.head is None:
@@ -45,8 +43,7 @@ class DoublyLinkedList:
             self.tail.next = None
             temp.prev = None
         self.length -= 1
-        return temp.value
-    
+        return temp.value 
 
     def prepend(self, value):
         new_node = Node(value)
@@ -59,7 +56,6 @@ class DoublyLinkedList:
             self.head = new_node
         self.length += 1         
         return True
-    
 
     def pop_first(self):
         if self.length == 0:
@@ -75,7 +71,6 @@ class DoublyLinkedList:
         self.length -= 1
         return True
     
-
     def get(self, index):
         if index < 0 or index >= self.length:
             return None
@@ -89,14 +84,12 @@ class DoublyLinkedList:
                 temp = temp.prev
         return temp
 
-    
     def set_value(self, index, value):
         temp = self.get(index)
         if temp:
             temp.value = value
             return True
         return False
-
 
     def insert(self, index, value):
         if index < 0 or index > self.length:
@@ -117,7 +110,6 @@ class DoublyLinkedList:
 
         self.length += 1
         return True
-
 
     def remove(self, index):
         if index < 0 or index > self.length:

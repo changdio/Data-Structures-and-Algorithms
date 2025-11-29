@@ -3,6 +3,7 @@ class Node:
         self.value = value
         self.next = None
 
+
 class LinkedList:
 
     def __init__(self, value):
@@ -11,13 +12,11 @@ class LinkedList:
         self.tail = new_node
         self.length = 1
 
-
     def print_list(self):
         temp = self.head
         while temp is not None:
             print(temp.value)
             temp = temp.next
-
 
     def append(self, value):   
         new_node = Node(value)
@@ -29,7 +28,6 @@ class LinkedList:
             self.tail = new_node
         self.length += 1
         return True
-
 
     def pop(self):
 
@@ -51,7 +49,6 @@ class LinkedList:
             self.tail = None
         return temp.value
     
-
     def prepend(self, value):
         new_node = Node(value)
         if self.length == 0:
@@ -62,7 +59,6 @@ class LinkedList:
             self.head = new_node
         self.length += 1
         return True
-    
     
     def pop_first(self):
 
@@ -78,7 +74,6 @@ class LinkedList:
             self.tail = None
         return temp
     
-
     def get(self, index):
         if index < 0 or index >= self.length:
             return None
@@ -87,7 +82,6 @@ class LinkedList:
             temp = temp.next
         return temp
 
-
     def set_value(self, index, value):
         temp = self.get(index)
         if temp:
@@ -95,7 +89,6 @@ class LinkedList:
             return True
         return False
                
-
     def insert(self, index, value):
         if index < 0 or index > self.length:
             return False
@@ -110,7 +103,6 @@ class LinkedList:
         self.length += 1
         return True
 
-    
     def remove(self, index):
         if index < 0 or index >= self.length:
             return None
@@ -124,7 +116,6 @@ class LinkedList:
         temp.next = None
         self.length -= 1
         return temp
-
 
     def reverse(self):
         temp = self.head
